@@ -26,13 +26,13 @@ local function Reply(sender, ok, msg)
     AdminEvents.AdminResult:FireClient(sender, ok, msg)
 end
 
--- ── Access check ──────────────────────────────────────────────────────────────
+-- Access check
 
 AdminEvents.RequestAdminAccess:Connect(function(sender)
     AdminEvents.AdminAccess:FireClient(sender, IsStaff(sender))
 end)
 
--- ── Player list ───────────────────────────────────────────────────────────────
+-- Player list
 
 AdminEvents.RequestPlayerList:Connect(function(sender)
     if not IsStaff(sender) then return end
@@ -43,7 +43,7 @@ AdminEvents.RequestPlayerList:Connect(function(sender)
     AdminEvents.PlayerListData:FireClient(sender, list)
 end)
 
--- ── Banned users ──────────────────────────────────────────────────────────────
+-- Banned users
 
 AdminEvents.RequestBannedUsers:Connect(function(sender)
     if not IsStaff(sender) then return end
@@ -58,7 +58,7 @@ AdminEvents.RequestBannedUsers:Connect(function(sender)
     end)
 end)
 
--- ── Moderation actions ────────────────────────────────────────────────────────
+-- Moderation actions
 
 AdminEvents.AdminKick:Connect(function(sender, targetId)
     if not IsStaff(sender) then return end
@@ -104,7 +104,7 @@ AdminEvents.AdminUnban:Connect(function(sender, userId)
     else Reply(sender, false, "Unban failed: " .. tostring(err)) end
 end)
 
--- ── Game actions ──────────────────────────────────────────────────────────────
+-- Game actions
 
 AdminEvents.AdminTeleport:Connect(function(sender, targetId)
     if not IsStaff(sender) then return end

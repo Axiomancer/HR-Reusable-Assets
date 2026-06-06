@@ -8,7 +8,7 @@
 -- permanent: true means the item is bought once and owned forever.
 -- uses: for consumables, how many uses are granted per purchase (0 for permanent).
 
--- ── Consumable items ──────────────────────────────────────────────────────────
+-- Consumable items
 -- Players can buy these multiple times. Uses are tracked in Inventory.
 CONSUMABLES = {
     {
@@ -24,7 +24,7 @@ CONSUMABLES = {
     },
 }
 
--- ── Permanent items ───────────────────────────────────────────────────────────
+-- Permanent items
 -- Bought once. Subsequent buy attempts are blocked by the Owned state.
 PERMANENTS = {
     {
@@ -41,6 +41,6 @@ PERMANENTS = {
     },
 }
 
--- ── Ordered lists (used by UI to render rows in sequence) ────────────────────
+-- Ordered lists (used by UI to render rows in sequence)
 CONSUMABLE_LIST = CONSUMABLES
 PERMANENT_LIST  = PERMANENTS

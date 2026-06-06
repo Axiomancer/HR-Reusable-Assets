@@ -38,7 +38,7 @@ local feed4icon : Image = nil
 --!Bind
 local feed5icon : Image = nil
 
--- ── Icon slots ────────────────────────────────────────────────────────────────
+-- Icon slots
 -- Drag a PNG from your project into each slot in the Inspector.
 -- The slot name is the iconKey you pass from your server script.
 -- Add as many slots as you need by copying the pattern below.
@@ -55,11 +55,11 @@ local iconCoin    : Texture = nil   -- "coin"  (economy events)
 --!SerializeField
 local iconShield  : Texture = nil   -- "shield" (staff or moderation events)
 
--- ── Config ────────────────────────────────────────────────────────────────────
+-- Config
 local MAX_ENTRIES = 5    -- max rows visible at once
 local LIFETIME    = 8    -- seconds before an entry expires
 
--- ── Internal ─────────────────────────────────────────────────────────────────
+-- Internal
 local FeedEvents = require("Module_FeedEvents")
 
 local labels   = { feed1,     feed2,     feed3,     feed4,     feed5     }

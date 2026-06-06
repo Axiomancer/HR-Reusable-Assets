@@ -24,7 +24,7 @@
 local InvMgr   = require("Module_InventoryManager")
 local CurrEvents = require("Module_CurrencyEvents")
 
--- ── CONFIG -- edit these for your game ───────────────────────────────────────
+-- CONFIG -- edit these for your game
 
 local CURRENCY_ITEM    = "game_coins"        -- Inventory item ID for your currency
 local LEADERBOARD_KEY  = nil                 -- Leaderboard key, or nil to disable
@@ -40,7 +40,7 @@ local SPIN_TABLE = {
     { amount = 300, weight = 3  },
 }
 
--- ── Internal ─────────────────────────────────────────────────────────────────
+-- Internal
 
 local pendingBonuses = {}  -- [player.id] = pre-rolled amount
 
@@ -62,7 +62,7 @@ local function RollBonus()
     return SPIN_TABLE[1].amount
 end
 
--- ── Public API ────────────────────────────────────────────────────────────────
+-- Public API
 
 function LoadBalance(player)
     SyncToClient(player)
@@ -122,7 +122,7 @@ function GrantDailyBonus(player)
     CurrEvents.DailyBonusResult:FireClient(player, amount, newBalance)
 end
 
--- ── Server-side event hooks -- wire these in your Server script ───────────────
+-- Server-side event hooks -- wire these in your Server script
 --
 --   CurrEvents.RequestBalance:Connect(function(sender)
 --       CurrencyManager.SendBalance(sender)
