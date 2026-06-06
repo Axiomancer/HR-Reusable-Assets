@@ -1,21 +1,11 @@
 --!Type(UI)
 
--- Activity Feed
--- A scrolling live event log shown bottom-left. Each row displays a small
--- icon alongside a text message. Entries expire after LIFETIME seconds.
--- A maximum of MAX_ENTRIES rows are shown at once (oldest drops off the top).
---
--- HOW TO ADD YOUR OWN ICON KEYS:
---   1. Add a --!SerializeField slot below (copy the pattern of the existing ones).
---   2. Add the key -> texture mapping inside ICON_MAP in ClientStart.
---   3. From your server script, fire:
---        FeedEvents.ActivityLog:FireAllClients("yourKey", "Your message")
---
--- DEPENDENCIES: Module_FeedEvents.lua
+-- Live event feed. Bottom-left, up to 5 rows, each with a small PNG icon + text.
+-- Fire from any server script: FeedEvents.ActivityLog:FireAllClients("iconKey", "message")
+-- Add icon keys by adding a SerializeField slot and a line in ICON_MAP (ClientStart).
 
 --!Bind
 local feedRoot  : UILuaView = nil
--- Row text labels
 --!Bind
 local feed1 : UILabel = nil
 --!Bind
@@ -26,7 +16,6 @@ local feed3 : UILabel = nil
 local feed4 : UILabel = nil
 --!Bind
 local feed5 : UILabel = nil
--- Row icon Images (one per row, same order as labels)
 --!Bind
 local feed1icon : Image = nil
 --!Bind
@@ -38,35 +27,29 @@ local feed4icon : Image = nil
 --!Bind
 local feed5icon : Image = nil
 
--- Icon slots
--- Drag a PNG from your project into each slot in the Inspector.
--- The slot name is the iconKey you pass from your server script.
--- Add as many slots as you need by copying the pattern below.
 --!SerializeField
-local iconDefault : Texture = nil   -- fallback when key is unrecognised
+local iconDefault : Texture = nil
 --!SerializeField
-local iconJoin    : Texture = nil   -- "join"  (player arrived or left)
+local iconJoin : Texture = nil
 --!SerializeField
-local iconAlert   : Texture = nil   -- "alert" (announcements, warnings)
+local iconAlert : Texture = nil
 --!SerializeField
-local iconStar    : Texture = nil   -- "star"  (achievements, highlights)
+local iconStar : Texture = nil
 --!SerializeField
-local iconCoin    : Texture = nil   -- "coin"  (economy events)
+local iconCoin : Texture = nil
 --!SerializeField
-local iconShield  : Texture = nil   -- "shield" (staff or moderation events)
+local iconShield : Texture = nil
 
--- Config
-local MAX_ENTRIES = 5    -- max rows visible at once
-local LIFETIME    = 8    -- seconds before an entry expires
-
--- Internal
 local FeedEvents = require("Module_FeedEvents")
+
+local MAX_ENTRIES = 5
+local LIFETIME    = 8
 
 local labels   = { feed1,     feed2,     feed3,     feed4,     feed5     }
 local iconEls  = { feed1icon, feed2icon, feed3icon, feed4icon, feed5icon }
 local feedRows = {}
-local entries  = {}   -- { iconKey, text, expiry }; index 1 = oldest, last = newest
-local ICON_MAP = {}   -- built in ClientStart once SerializeFields are populated
+local entries  = {}
+local ICON_MAP = {}
 
 local function SetImg(imgEl, tex)
     if imgEl and tex then imgEl.image = tex end
@@ -112,13 +95,10 @@ function self:ClientAwake()
 end
 
 function self:ClientStart()
-    -- Cache row VisualElements (cannot bind VisualElement directly in Highrise)
     for i = 1, MAX_ENTRIES do
         feedRows[i] = feedRoot:Q("feed" .. i .. "row")
     end
 
-    -- Map iconKeys to textures.
-    -- Add a line here for every --!SerializeField slot you defined above.
     ICON_MAP = {
         join   = iconJoin,
         alert  = iconAlert,
@@ -131,7 +111,6 @@ function self:ClientStart()
         AddEntry(iconKey, message)
     end)
 
-    -- Expire old entries every second
     Timer.Every(1, function()
         local now = os.time()
         local changed = false
