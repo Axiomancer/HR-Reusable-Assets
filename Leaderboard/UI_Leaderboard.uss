@@ -1,0 +1,125 @@
+/* UI_Leaderboard.uss — self-contained */
+
+/* ── Full-screen dimmed overlay ─────────────────────────────────────────────── */
+.panel-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+/* ── Card ───────────────────────────────────────────────────────────────────── */
+.panel-card {
+    background-color: rgba(18, 18, 26, 0.98);
+    border-radius: 16px;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+}
+
+.lb-card {
+    width: 380px;
+    padding-bottom: 12px;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────────── */
+.panel-header {
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 16px 14px 20px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.panel-title-icon {
+    width: 22px; height: 22px;
+    max-width: 22px; max-height: 22px;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+.panel-title {
+    font-size: 20px;
+    -unity-font-style: bold;
+    color: rgba(255, 255, 255, 0.95);
+    flex-grow: 1;
+}
+
+.panel-close {
+    width: 34px;
+    height: 34px;
+    border-radius: 17px;
+    background-color: rgba(255, 255, 255, 0.10);
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.70);
+    -unity-text-align: middle-center;
+    flex-shrink: 0;
+}
+
+.panel-close:hover { background-color: rgba(255, 80, 80, 0.35); }
+
+/* ── Tabs ───────────────────────────────────────────────────────────────────── */
+.lb-tabs {
+    flex-direction: row;
+    padding: 10px 16px 6px 16px;
+}
+
+.lb-tab {
+    flex-grow: 1;
+    height: 30px;
+    margin: 0 3px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    font-size: 12px;
+    -unity-font-style: bold;
+    color: rgba(255, 255, 255, 0.50);
+    -unity-text-align: middle-center;
+}
+
+.lb-tab:hover { background-color: rgba(255, 255, 255, 0.10); }
+
+.lb-tab--active {
+    background-color: rgba(255, 193, 7, 0.18);
+    color: #FFC107;
+}
+
+/* ── Rows ───────────────────────────────────────────────────────────────────── */
+.lb-row {
+    flex-direction: row;
+    align-items: center;
+    padding: 9px 20px;
+}
+
+.lb-row:hover { background-color: rgba(255, 255, 255, 0.04); }
+
+.lb-rank {
+    width: 34px;
+    font-size: 14px;
+    -unity-font-style: bold;
+    color: rgba(255, 193, 7, 0.80);
+    -unity-text-align: middle-left;
+}
+
+.lb-name {
+    flex-grow: 1;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.lb-score {
+    font-size: 15px;
+    -unity-font-style: bold;
+    color: rgba(255, 255, 255, 0.60);
+    -unity-text-align: middle-right;
+}
+
+.lb-divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.08);
+    margin: 6px 20px;
+}
+
+.lb-self-row { background-color: rgba(255, 193, 7, 0.06); }
+.lb-self { color: #FFC107; }

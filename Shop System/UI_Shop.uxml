@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="UnityEngine.UIElements"
+    xmlns:hr="Highrise.UI"
+    xmlns:editor="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd"
+>
+
+  <hr:UILuaView name="shopRoot" class="panel-overlay" picking-mode="Position">
+    <VisualElement name="shopCard" class="panel-card shop-card" picking-mode="Position">
+
+      <VisualElement class="panel-header">
+        <Image name="shopTitleIcon" class="panel-title-icon" />
+        <hr:UILabel name="shopTitle"     class="panel-title" />
+        <VisualElement class="shop-gold-row">
+          <Image name="shopGoldIcon"  class="shop-gold-icon" />
+          <hr:UILabel name="shopGoldLabel" class="shop-gold-value" />
+        </VisualElement>
+        <hr:UILabel name="shopClose" class="panel-close" />
+      </VisualElement>
+
+      <hr:UIScrollView class="shop-scroll">
+
+        <hr:UILabel name="sectionPacks" class="shop-section-header shop-section-packs" />
+        <VisualElement class="shop-item-row">
+          <Image name="sc1icon" class="shop-item-icon" />
+          <VisualElement class="shop-item-info"><hr:UILabel name="sc1name" class="shop-item-name" /><hr:UILabel name="sc1desc" class="shop-item-desc" /></VisualElement>
+          <hr:UILabel name="sc1buy" class="shop-buy" />
+        </VisualElement>
+        <VisualElement class="shop-item-row">
+          <Image name="sc2icon" class="shop-item-icon" />
+          <VisualElement class="shop-item-info"><hr:UILabel name="sc2name" class="shop-item-name" /><hr:UILabel name="sc2desc" class="shop-item-desc" /></VisualElement>
+          <hr:UILabel name="sc2buy" class="shop-buy" />
+        </VisualElement>
+        <VisualElement class="shop-item-row">
+          <Image name="sc3icon" class="shop-item-icon" />
+          <VisualElement class="shop-item-info"><hr:UILabel name="sc3name" class="shop-item-name" /><hr:UILabel name="sc3desc" class="shop-item-desc" /></VisualElement>
+          <hr:UILabel name="sc3buy" class="shop-buy" />
+        </VisualElement>
+        <VisualElement class="shop-item-row">
+          <Image name="sc4icon" class="shop-item-icon" />
+          <VisualElement class="shop-item-info"><hr:UILabel name="sc4name" class="shop-item-name" /><hr:UILabel name="sc4desc" class="shop-item-desc" /></VisualElement>
+          <hr:UILabel name="sc4buy" class="shop-buy" />
+        </VisualElement>
+
+        <hr:UILabel name="sectionConsumables" class="shop-section-header" />
+        <VisualElement class="shop-item-row">
+          <Image name="c1icon" class="shop-item-icon" />
+          <VisualElement class="shop-item-info"><hr:UILabel name="c1name" class="shop-item-name" /><hr:UILabel name="c1desc" class="shop-item-desc" /></VisualElement>
+          <hr:UILabel name="c1buy" class="shop-buy" />
+        </VisualElement>
+        <VisualElement class="shop-item-row">
+          <Image name="c2icon" class="shop-item-icon" />
+          <VisualElement class="shop-item-info"><hr:UILabel name="c2name" class="shop-item-name" /><hr:UILabel name="c2desc" class="shop-item-desc" /></VisualElement>
+          <hr:UILabel name="c2buy" class="shop-buy" />
+        </VisualElement>
+
+        <hr:UILabel name="sectionPermanents" class="shop-section-header shop-section-perm" />
+        <VisualElement class="shop-item-row">
+          <Image name="p1icon" class="shop-item-icon" />
+          <VisualElement class="shop-item-info"><hr:UILabel name="p1name" class="shop-item-name" /><hr:UILabel name="p1desc" class="shop-item-desc" /></VisualElement>
+          <hr:UILabel name="p1buy" class="shop-buy" />
+        </VisualElement>
+        <VisualElement class="shop-item-row">
+          <Image name="p2icon" class="shop-item-icon" />
+          <VisualElement class="shop-item-info"><hr:UILabel name="p2name" class="shop-item-name" /><hr:UILabel name="p2desc" class="shop-item-desc" /></VisualElement>
+          <hr:UILabel name="p2buy" class="shop-buy" />
+        </VisualElement>
+        <VisualElement class="shop-item-row">
+          <Image name="p3icon" class="shop-item-icon" />
+          <VisualElement class="shop-item-info"><hr:UILabel name="p3name" class="shop-item-name" /><hr:UILabel name="p3desc" class="shop-item-desc" /></VisualElement>
+          <hr:UILabel name="p3buy" class="shop-buy" />
+        </VisualElement>
+        <VisualElement class="shop-item-row">
+          <Image name="p4icon" class="shop-item-icon" />
+          <VisualElement class="shop-item-info"><hr:UILabel name="p4name" class="shop-item-name" /><hr:UILabel name="p4desc" class="shop-item-desc" /></VisualElement>
+          <hr:UILabel name="p4buy" class="shop-buy" />
+        </VisualElement>
+        <VisualElement class="shop-item-row">
+          <Image name="p5icon" class="shop-item-icon" />
+          <VisualElement class="shop-item-info"><hr:UILabel name="p5name" class="shop-item-name" /><hr:UILabel name="p5desc" class="shop-item-desc" /></VisualElement>
+          <hr:UILabel name="p5buy" class="shop-buy" />
+        </VisualElement>
+
+      </hr:UIScrollView>
+    </VisualElement>
+
+    <!-- Payment method popup (hidden until a Buy is pressed) -->
+    <VisualElement name="payPopup" class="pay-popup" picking-mode="Position">
+      <VisualElement name="payCard" class="pay-card" picking-mode="Position">
+        <hr:UILabel name="payTitle" class="pay-title" />
+        <hr:UILabel name="payChoose" class="pay-choose" />
+        <hr:UILabel name="paySC"   class="pay-btn pay-btn-sc" />
+        <hr:UILabel name="payGold" class="pay-btn pay-btn-gold" />
+        <hr:UILabel name="payCancel" class="pay-cancel" />
+      </VisualElement>
+    </VisualElement>
+
+  </hr:UILuaView>
+
+</UXML>

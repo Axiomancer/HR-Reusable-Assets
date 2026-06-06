@@ -1,0 +1,64 @@
+/* UI_Notify.uss */
+
+/* ── Full-screen overlay (the UILuaView root) ───────────────────────────────── */
+.notify-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 24px;
+}
+
+/* ── Card (centred within the overlay) ─────────────────────────────────────── */
+.notify-card {
+    width: 480px;
+    background-color: rgba(12, 12, 18, 0.92);
+    border-radius: 8px;
+    border-left-width: 6px;
+    border-left-color: #607D8B;
+    flex-direction: row;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+/* ── Icon ───────────────────────────────────────────────────────────────────── */
+.notify-icon {
+    width: 52px;
+    flex-shrink: 0;
+    font-size: 20px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    color: #607D8B;
+}
+
+.notify--success { color: #4CAF50; }
+.notify--warning { color: #FFC107; }
+.notify--error   { color: #F44336; }
+.notify--info    { color: #2196F3; }
+.notify--default { color: #607D8B; }
+.notify--round   { color: #9C27B0; }
+.notify--death   { color: #FF5722; }
+
+/* ── Text content ───────────────────────────────────────────────────────────── */
+.notify-content {
+    flex-direction: column;
+    padding: 14px 16px 14px 6px;
+    flex-grow: 1;
+}
+
+.notify-title {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.95);
+    -unity-font-style: bold;
+    white-space: normal;
+    margin-bottom: 4px;
+}
+
+.notify-text {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.65);
+    white-space: normal;
+}

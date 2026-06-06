@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="UnityEngine.UIElements"
+    xmlns:hr="Highrise.UI"
+    xmlns:editor="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd"
+>
+
+  <hr:UILuaView name="lbRoot" class="panel-overlay" picking-mode="Position">
+    <VisualElement name="lbCard" class="panel-card lb-card" picking-mode="Position">
+
+      <VisualElement class="panel-header">
+        <Image name="lbTitleIcon" class="panel-title-icon" />
+        <hr:UILabel name="lbTitle" class="panel-title" />
+        <hr:UILabel name="lbClose" class="panel-close" />
+      </VisualElement>
+
+      <!-- Tabs -->
+      <VisualElement class="lb-tabs">
+        <hr:UILabel name="tabWins"   class="lb-tab lb-tab--active" />
+        <hr:UILabel name="tabDeaths" class="lb-tab" />
+        <hr:UILabel name="tabCoins"  class="lb-tab" />
+      </VisualElement>
+
+      <VisualElement class="lb-row">
+        <hr:UILabel name="lb1rank"  class="lb-rank"  />
+        <hr:UILabel name="lb1name"  class="lb-name"  />
+        <hr:UILabel name="lb1score" class="lb-score" />
+      </VisualElement>
+      <VisualElement class="lb-row">
+        <hr:UILabel name="lb2rank"  class="lb-rank"  />
+        <hr:UILabel name="lb2name"  class="lb-name"  />
+        <hr:UILabel name="lb2score" class="lb-score" />
+      </VisualElement>
+      <VisualElement class="lb-row">
+        <hr:UILabel name="lb3rank"  class="lb-rank"  />
+        <hr:UILabel name="lb3name"  class="lb-name"  />
+        <hr:UILabel name="lb3score" class="lb-score" />
+      </VisualElement>
+      <VisualElement class="lb-row">
+        <hr:UILabel name="lb4rank"  class="lb-rank"  />
+        <hr:UILabel name="lb4name"  class="lb-name"  />
+        <hr:UILabel name="lb4score" class="lb-score" />
+      </VisualElement>
+      <VisualElement class="lb-row">
+        <hr:UILabel name="lb5rank"  class="lb-rank"  />
+        <hr:UILabel name="lb5name"  class="lb-name"  />
+        <hr:UILabel name="lb5score" class="lb-score" />
+      </VisualElement>
+
+      <VisualElement class="lb-divider" />
+      <VisualElement class="lb-row lb-self-row">
+        <hr:UILabel name="lbSelfRank"  class="lb-rank lb-self"  />
+        <hr:UILabel name="lbSelfName"  class="lb-name lb-self"  />
+        <hr:UILabel name="lbSelfScore" class="lb-score lb-self" />
+      </VisualElement>
+
+    </VisualElement>
+  </hr:UILuaView>
+
+</UXML>

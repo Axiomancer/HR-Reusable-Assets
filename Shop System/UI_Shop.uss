@@ -1,0 +1,145 @@
+/* UI_Shop.uss — self-contained */
+
+/* ── Full-screen dimmed overlay ─────────────────────────────────────────────── */
+.panel-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+.panel-card {
+    background-color: rgba(18, 18, 26, 0.98);
+    border-radius: 16px;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+}
+
+.shop-card { width: 440px; padding-bottom: 14px; }
+
+.panel-header {
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 16px 14px 20px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.panel-title-icon {
+    width: 22px; height: 22px;
+    max-width: 22px; max-height: 22px;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+.panel-title { font-size: 20px; -unity-font-style: bold; color: rgba(255,255,255,0.95); flex-grow: 1; }
+
+.panel-close {
+    width: 34px; height: 34px; border-radius: 17px;
+    background-color: rgba(255, 255, 255, 0.10);
+    font-size: 16px; color: rgba(255,255,255,0.70); -unity-text-align: middle-center; flex-shrink: 0; margin-left: 8px;
+}
+.panel-close:hover { background-color: rgba(255, 80, 80, 0.35); }
+
+.shop-gold-row {
+    flex-direction: row; align-items: center;
+    background-color: rgba(255, 193, 7, 0.14);
+    border-radius: 14px; padding: 5px 12px; flex-shrink: 0;
+}
+.shop-gold-icon  { width: 22px; height: 22px; max-width: 22px; max-height: 22px; margin-right: 4px; }
+.shop-gold-value { font-size: 15px; -unity-font-style: bold; color: #FFC107; }
+
+.shop-section-header {
+    font-size: 11px; -unity-font-style: bold; color: rgba(255,255,255,0.40);
+    padding: 14px 20px 6px 20px; -unity-text-align: middle-left; letter-spacing: 1px;
+}
+.shop-section-perm  { color: rgba(255, 193, 7, 0.55); margin-top: 6px; }
+.shop-section-packs { color: rgba(120, 220, 150, 0.65); }
+
+.shop-scroll { max-height: 440px; }
+
+.shop-item-row { flex-direction: row; align-items: center; padding: 10px 20px; }
+
+.shop-item-icon {
+    width: 42px; height: 42px; max-width: 42px; max-height: 42px;
+    background-color: rgba(255, 255, 255, 0.07); border-radius: 12px; flex-shrink: 0; margin-right: 14px;
+}
+.shop-item-info { flex-grow: 1; flex-direction: column; margin-right: 10px; }
+.shop-item-name { font-size: 15px; -unity-font-style: bold; color: rgba(255,255,255,0.94); margin-bottom: 3px; }
+.shop-item-desc { font-size: 11px; color: rgba(255,255,255,0.48); white-space: normal; }
+
+/* ── Single Buy button ──────────────────────────────────────────────────────── */
+.shop-buy {
+    width: 88px; height: 32px; border-radius: 16px;
+    background-color: #FFC107;
+    font-size: 13px; -unity-font-style: bold; color: rgba(0,0,0,0.85);
+    -unity-text-align: middle-center; flex-shrink: 0;
+}
+.shop-buy:hover { background-color: #FFD54F; }
+
+/* Owned (permanents already purchased) */
+.shop-buy--owned {
+    background-color: rgba(255, 255, 255, 0.10);
+    color: rgba(255, 255, 255, 0.40);
+}
+
+/* ── Payment popup ──────────────────────────────────────────────────────────── */
+.pay-popup {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.55);
+    display: none;   /* toggled via .pay-popup--open in Lua */
+}
+
+.pay-popup--open { display: flex; }
+
+.pay-card {
+    width: 300px;
+    background-color: rgba(22, 22, 32, 1);
+    border-radius: 16px;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.10);
+    padding: 20px;
+    align-items: stretch;
+}
+
+.pay-title  { font-size: 17px; -unity-font-style: bold; color: rgba(255,255,255,0.95); -unity-text-align: middle-center; margin-bottom: 2px; }
+.pay-choose { font-size: 12px; color: rgba(255,255,255,0.50); -unity-text-align: middle-center; margin-bottom: 14px; }
+
+.pay-btn {
+    height: 42px; border-radius: 12px;
+    font-size: 14px; -unity-font-style: bold; -unity-text-align: middle-center;
+    margin-bottom: 8px;
+}
+.pay-btn-sc {
+    background-color: rgba(255, 193, 7, 0.20);
+    border-width: 1px; border-color: rgba(255, 193, 7, 0.45);
+    color: #FFC107;
+}
+.pay-btn-sc:hover { background-color: rgba(255, 193, 7, 0.32); }
+
+.pay-btn-gold {
+    background-color: rgba(130, 90, 230, 0.28);
+    border-width: 1px; border-color: rgba(160, 110, 255, 0.55);
+    color: #C7B3F5;
+}
+.pay-btn-gold:hover { background-color: rgba(150, 105, 245, 0.40); }
+
+/* Greyed-out payment option (can't afford) */
+.pay-btn--disabled {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.28);
+}
+
+.pay-cancel {
+    height: 34px;
+    font-size: 13px; color: rgba(255,255,255,0.55); -unity-text-align: middle-center;
+    margin-top: 4px;
+}
+.pay-cancel:hover { color: rgba(255,255,255,0.85); }

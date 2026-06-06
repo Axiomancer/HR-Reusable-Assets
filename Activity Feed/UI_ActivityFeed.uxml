@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="UnityEngine.UIElements"
+    xmlns:hr="Highrise.UI"
+    xmlns:editor="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd"
+>
+
+  <hr:UILuaView name="feedRoot" class="feed-root" picking-mode="Ignore">
+    <VisualElement class="feed-stack">
+      <VisualElement name="feed1row" class="feed-row feed-row--empty">
+        <Image name="feed1icon" class="feed-icon" />
+        <hr:UILabel name="feed1" class="feed-entry" />
+      </VisualElement>
+      <VisualElement name="feed2row" class="feed-row feed-row--empty">
+        <Image name="feed2icon" class="feed-icon" />
+        <hr:UILabel name="feed2" class="feed-entry" />
+      </VisualElement>
+      <VisualElement name="feed3row" class="feed-row feed-row--empty">
+        <Image name="feed3icon" class="feed-icon" />
+        <hr:UILabel name="feed3" class="feed-entry" />
+      </VisualElement>
+      <VisualElement name="feed4row" class="feed-row feed-row--empty">
+        <Image name="feed4icon" class="feed-icon" />
+        <hr:UILabel name="feed4" class="feed-entry" />
+      </VisualElement>
+      <VisualElement name="feed5row" class="feed-row feed-row--empty">
+        <Image name="feed5icon" class="feed-icon" />
+        <hr:UILabel name="feed5" class="feed-entry" />
+      </VisualElement>
+    </VisualElement>
+  </hr:UILuaView>
+
+</UXML>

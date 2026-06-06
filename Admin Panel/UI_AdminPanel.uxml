@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="UnityEngine.UIElements"
+    xmlns:hr="Highrise.UI"
+    xmlns:editor="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd"
+>
+
+  <hr:UILuaView name="adminRoot" class="panel-overlay" picking-mode="Position">
+    <VisualElement name="adminCard" class="panel-card admin-card" picking-mode="Position">
+
+      <!-- Header -->
+      <VisualElement class="panel-header">
+        <Image name="adminTitleIcon" class="panel-title-icon" />
+        <hr:UILabel name="adminTitle" class="panel-title" />
+        <hr:UILabel name="adminClose" class="panel-close" />
+      </VisualElement>
+
+      <!-- Target player -->
+      <VisualElement class="admin-target">
+        <hr:UILabel name="targetPrev" class="admin-cycle" />
+        <VisualElement class="admin-target-mid">
+          <hr:UILabel name="targetLabel" class="admin-target-label" />
+          <hr:UILabel name="targetName"  class="admin-target-name" />
+        </VisualElement>
+        <hr:UILabel name="targetNext" class="admin-cycle" />
+      </VisualElement>
+
+      <!-- Tabs -->
+      <VisualElement class="admin-tabs">
+        <hr:UILabel name="tabMod"  class="admin-tab admin-tab--active" />
+        <hr:UILabel name="tabGame" class="admin-tab" />
+      </VisualElement>
+
+      <hr:UILabel name="adminStatus" class="admin-status" />
+
+      <hr:UIScrollView name="adminScroll" class="admin-scroll">
+
+        <!-- ===== MODERATION VIEW ===== -->
+        <VisualElement name="modView" class="admin-view">
+
+          <hr:UILabel name="secDuration" class="admin-section" />
+          <hr:UITextField name="durField" class="admin-input" />
+          <VisualElement class="admin-chips">
+            <hr:UILabel name="durChip5"    class="admin-chip" />
+            <hr:UILabel name="durChip30"   class="admin-chip" />
+            <hr:UILabel name="durChip60"   class="admin-chip" />
+            <hr:UILabel name="durChip1440" class="admin-chip" />
+          </VisualElement>
+
+          <VisualElement class="admin-row">
+            <hr:UILabel name="btnMute"   class="admin-btn admin-btn--warn" />
+            <hr:UILabel name="btnUnmute" class="admin-btn admin-btn--good" />
+          </VisualElement>
+          <VisualElement class="admin-row">
+            <hr:UILabel name="btnBan"     class="admin-btn admin-btn--danger" />
+            <hr:UILabel name="btnBanPerm" class="admin-btn admin-btn--danger" />
+          </VisualElement>
+          <VisualElement class="admin-row">
+            <hr:UILabel name="btnKick" class="admin-btn admin-btn--danger admin-btn--wide" />
+          </VisualElement>
+
+          <VisualElement class="admin-banned-head">
+            <hr:UILabel name="secBanned"     class="admin-section admin-section--inline" />
+            <hr:UILabel name="bannedRefresh" class="admin-refresh" />
+          </VisualElement>
+          <VisualElement name="ban1row" class="admin-ban-row">
+            <hr:UILabel name="ban1name" class="admin-ban-name" />
+            <hr:UILabel name="ban1btn"  class="admin-ban-btn" />
+          </VisualElement>
+          <VisualElement name="ban2row" class="admin-ban-row">
+            <hr:UILabel name="ban2name" class="admin-ban-name" />
+            <hr:UILabel name="ban2btn"  class="admin-ban-btn" />
+          </VisualElement>
+          <VisualElement name="ban3row" class="admin-ban-row">
+            <hr:UILabel name="ban3name" class="admin-ban-name" />
+            <hr:UILabel name="ban3btn"  class="admin-ban-btn" />
+          </VisualElement>
+          <VisualElement name="ban4row" class="admin-ban-row">
+            <hr:UILabel name="ban4name" class="admin-ban-name" />
+            <hr:UILabel name="ban4btn"  class="admin-ban-btn" />
+          </VisualElement>
+          <VisualElement name="ban5row" class="admin-ban-row">
+            <hr:UILabel name="ban5name" class="admin-ban-name" />
+            <hr:UILabel name="ban5btn"  class="admin-ban-btn" />
+          </VisualElement>
+
+        </VisualElement>
+
+        <!-- ===== GAME VIEW ===== -->
+        <VisualElement name="gameView" class="admin-view admin-view--hidden">
+
+          <hr:UILabel name="secCoins" class="admin-section" />
+          <hr:UITextField name="coinField" class="admin-input" />
+          <VisualElement class="admin-chips">
+            <hr:UILabel name="coinChip100"  class="admin-chip" />
+            <hr:UILabel name="coinChip500"  class="admin-chip" />
+            <hr:UILabel name="coinChip1000" class="admin-chip" />
+            <hr:UILabel name="coinChip5000" class="admin-chip" />
+          </VisualElement>
+          <VisualElement class="admin-row">
+            <hr:UILabel name="btnGiveCoins" class="admin-btn admin-btn--gold admin-btn--wide" />
+          </VisualElement>
+
+          <hr:UILabel name="secPerks" class="admin-section" />
+          <VisualElement class="admin-row">
+            <hr:UILabel name="perk1" class="admin-btn admin-btn--perk" />
+            <hr:UILabel name="perk2" class="admin-btn admin-btn--perk" />
+            <hr:UILabel name="perk3" class="admin-btn admin-btn--perk" />
+          </VisualElement>
+          <VisualElement class="admin-row">
+            <hr:UILabel name="perm1" class="admin-btn admin-btn--perk" />
+            <hr:UILabel name="perm2" class="admin-btn admin-btn--perk" />
+          </VisualElement>
+          <VisualElement class="admin-row">
+            <hr:UILabel name="perm3" class="admin-btn admin-btn--perk" />
+            <hr:UILabel name="perm4" class="admin-btn admin-btn--perk" />
+          </VisualElement>
+
+          <hr:UILabel name="secWorld" class="admin-section" />
+          <VisualElement class="admin-row">
+            <hr:UILabel name="btnTeleport" class="admin-btn" />
+          </VisualElement>
+          <VisualElement class="admin-row">
+            <hr:UILabel name="btnReset" class="admin-btn admin-btn--wide" />
+          </VisualElement>
+
+        </VisualElement>
+
+      </hr:UIScrollView>
+
+    </VisualElement>
+  </hr:UILuaView>
+
+</UXML>

@@ -1,0 +1,53 @@
+/* UI_ActivityFeed.uss — bottom-left world event feed */
+
+.feed-root {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    align-items: flex-start;     /* left */
+    justify-content: flex-end;   /* bottom */
+    padding-left: 16px;
+    padding-bottom: 90px;        /* sits above the chat bar */
+    flex-direction: column;
+}
+
+.feed-stack {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Each row = icon + text pill */
+.feed-row {
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(12, 12, 18, 0.78);
+    border-radius: 6px;
+    padding: 4px 10px 4px 6px;
+    margin-top: 4px;
+}
+
+/* Empty rows take no space */
+.feed-row--empty { display: none; }
+
+/* Newest row gets a subtle accent */
+.feed-row--new {
+    background-color: rgba(30, 30, 42, 0.88);
+}
+
+.feed-icon {
+    width: 14px;
+    height: 14px;
+    max-width: 14px;
+    max-height: 14px;
+    margin-right: 5px;
+    flex-shrink: 0;
+    opacity: 0.80;
+}
+
+.feed-entry {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.88);
+    -unity-text-align: middle-left;
+    white-space: nowrap;
+}
+
+.feed-row--new .feed-entry { color: #FFFFFF; }

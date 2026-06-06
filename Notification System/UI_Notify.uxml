@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="UnityEngine.UIElements"
+    xmlns:hr="Highrise.UI"
+    xmlns:editor="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd"
+>
+
+  <hr:UILuaView name="notifyCard" class="notify-screen" picking-mode="Ignore">
+    <VisualElement class="notify-card">
+      <hr:UILabel name="notifyIcon" class="notify-icon" />
+      <VisualElement class="notify-content">
+        <hr:UILabel name="notifyTitle" class="notify-title" />
+        <hr:UILabel name="notifyText" class="notify-text" />
+      </VisualElement>
+    </VisualElement>
+  </hr:UILuaView>
+
+</UXML>
